@@ -75,6 +75,14 @@ async function login(req, res, next) {
 
 }
 
+async function likePost(req, res, next) {
+    let bookId = req.body.bookId;
+    let book = bookModel.findOne({ "_id": bookId });
+    
+
+   let response= await bookModel.updateOne({ "_id": bookId },{$set:{"likes":+1}})
+       res.json(response) 
+}
 
 
 
@@ -82,5 +90,6 @@ module.exports = {
     registerUser,
     createBook,
     createComment,
-    login
+    login,
+    likePost
 }

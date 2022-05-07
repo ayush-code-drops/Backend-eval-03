@@ -81,5 +81,6 @@ async function login(req, res, next) {
 module.exports = {
     registerUser,
     createBook,
-    createComment
+    createComment,
+    login
 }

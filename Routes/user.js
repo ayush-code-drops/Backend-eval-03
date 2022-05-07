@@ -17,6 +17,6 @@ app.use(bodyParser.json())
 app.post('/register', userController.registerUser)
 app.post('/createbook', userController.createBook)
 app.post('/createcomment',userController.createComment)
-
+app.post('/login',userController.login)
 
 module.exports = app;

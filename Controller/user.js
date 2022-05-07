@@ -25,6 +25,19 @@ async function registerUser(req, res, next) {
 }
 
 
+async function createbook(req, res, next) {
+    
+    try {
+
+        let bookDetail = req.body;
+        let response = await bookModel.insertMany([bookDetail]);
+         res.json(response)
+    }
+    catch (error) {
+        res.json(error);
+    }
+}
+
 
 
 
